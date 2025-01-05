@@ -16,9 +16,9 @@ FROM alpine:3.11
 
 RUN apk add --update build-base linux-headers python3 python3-dev py3-pip
 
-RUN python3 -m pip install --upgrade pip==19.3.1
+RUN python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade pip==19.3.1
 
-RUN python3 -m pip install virtualenv
+RUN python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' virtualenv
 
 # bash is required for our test script invocation
 # ideally, we want to fix the invocation mechanism

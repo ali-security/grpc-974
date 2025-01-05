@@ -15,5 +15,5 @@
 
 JOBS=$(nproc) || JOBS=4
 # TODO(xuanwn): update pytype version
-python3 -m pip install pytype==2019.11.27
+python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' pytype==2019.11.27
 python3 -m pytype --keep-going -j "$JOBS" --strict-import --config "setup.cfg"

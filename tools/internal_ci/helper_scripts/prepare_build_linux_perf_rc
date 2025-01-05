@@ -19,10 +19,10 @@
 ulimit -n 32768
 ulimit -c unlimited
 
-python3 -m pip install pip==19.3.1
+python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' pip==19.3.1
 
 # Python dependencies for tools/run_tests/python_utils/check_on_pr.py
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
-time python3 -m pip install --user -r $DIR/requirements.linux_perf.txt
+time python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --user -r $DIR/requirements.linux_perf.txt
 
 git submodule update --init

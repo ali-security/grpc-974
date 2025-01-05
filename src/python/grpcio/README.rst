@@ -24,13 +24,13 @@ If you are installing locally...
 
 ::
 
-  $ pip install grpcio
+  $ pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' grpcio
 
 Else system wide (on Ubuntu)...
 
 ::
 
-  $ sudo pip install grpcio
+  $ sudo pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' grpcio
 
 If you're on Windows make sure that you installed the :code:`pip.exe` component
 when you installed Python (if not go back and install it!) then invoke:
@@ -59,9 +59,9 @@ package named :code:`python-dev`).
   $ cd $REPO_ROOT
   $ git submodule update --init
 
-  # For the next two commands do `sudo pip install` if you get permission-denied errors
-  $ pip install -rrequirements.txt
-  $ GRPC_PYTHON_BUILD_WITH_CYTHON=1 pip install .
+  # For the next two commands do `sudo pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/'` if you get permission-denied errors
+  $ pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' -rrequirements.txt
+  $ GRPC_PYTHON_BUILD_WITH_CYTHON=1 pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' .
 
 You cannot currently install Python from source on Windows. Things might work
 out for you in MSYS2 (follow the Linux instructions), but it isn't officially
@@ -79,7 +79,7 @@ Help, I ...
   which in turn is likely because your operating system's package manager owns
   it. You'll need to force the installation of the dependency:
 
-  :code:`pip install --ignore-installed $OFFENDING_DEPENDENCY`
+  :code:`pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --ignore-installed $OFFENDING_DEPENDENCY`
 
   For example, if you get an error like the following:
 
@@ -96,7 +96,7 @@ Help, I ...
 
   ::
 
-    sudo pip install --ignore-installed six
+    sudo pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --ignore-installed six
 
 * **... see the following error on some platforms**
 

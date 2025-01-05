@@ -31,11 +31,11 @@ BASEDIR=$(realpath "$BASEDIR")/../..
 PACKAGES="grpcio_channelz  grpcio_csds  grpcio_admin grpcio_health_checking  grpcio_reflection  grpcio_status  grpcio_testing  grpcio_tests"
 
 (cd "$BASEDIR";
-  pip install --upgrade cython;
+  pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade cython;
   python setup.py install;
   pushd tools/distrib/python/grpcio_tools;
     ../make_grpcio_tools.py
-    GRPC_PYTHON_BUILD_WITH_CYTHON=1 pip install .
+    GRPC_PYTHON_BUILD_WITH_CYTHON=1 pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' .
   popd;
   pushd src/python;
     for PACKAGE in ${PACKAGES}; do

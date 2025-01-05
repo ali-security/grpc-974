@@ -68,7 +68,7 @@ RUN curl https://bootstrap.pypa.io/get-pip.py | python3
 
 # Google Cloud Platform API libraries
 # These are needed for uploading test results to BigQuery (e.g. by tools/run_tests scripts)
-RUN python3 -m pip install --upgrade google-auth==1.23.0 google-api-python-client==1.12.8 oauth2client==4.1.0
+RUN python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade google-auth==1.23.0 google-api-python-client==1.12.8 oauth2client==4.1.0
 
 
 RUN mkdir /var/local/jenkins
@@ -87,10 +87,10 @@ RUN apt-get update && apt-get install -y \
 # otherwise clang-tidy will report missing <gtest/gtest.h> header
 RUN apt-get update && apt-get install -y libgtest-dev && apt-get clean
 
-RUN python3 -m pip install simplejson mako virtualenv==16.7.9 lxml six
+RUN python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' simplejson mako virtualenv==16.7.9 lxml six
 
 # Upgrade Python's YAML library
-RUN python3 -m pip install --upgrade --ignore-installed PyYAML==5.4.1 --user
+RUN python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade --ignore-installed PyYAML==5.4.1 --user
 
 # Install prerequisites for the clang-tidy script
 RUN apt-get update && apt-get install -y jq git

@@ -37,7 +37,7 @@ please refer to these documents
 - [Node](https://github.com/grpc/grpc-node): `npm install @grpc/grpc-js`
 - [Objective-C](src/objective-c): Add `gRPC-ProtoRPC` dependency to podspec
 - [PHP](src/php): `pecl install grpc`
-- [Python](src/python/grpcio): `pip install grpcio`
+- [Python](src/python/grpcio): `pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' grpcio`
 - [Ruby](src/ruby): `gem install grpc`
 - [WebJS](https://github.com/grpc/grpc-web): follow the grpc-web instructions
 

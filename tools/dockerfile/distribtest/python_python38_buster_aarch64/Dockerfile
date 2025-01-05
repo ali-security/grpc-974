@@ -15,4 +15,4 @@
 # this an aarch64 image, qemu emulator will be used to run the tests
 FROM arm64v8/python:3.8-buster
 
-RUN python3 -m pip install virtualenv
+RUN python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' virtualenv

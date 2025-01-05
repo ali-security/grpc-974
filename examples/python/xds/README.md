@@ -19,7 +19,7 @@ cd grpc/examples/python/xds
 ```sh
 virtualenv venv -p python3
 source venv/bin/activate
-pip install -r requirements.txt
+pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' -r requirements.txt
 python server.py
 ```
 

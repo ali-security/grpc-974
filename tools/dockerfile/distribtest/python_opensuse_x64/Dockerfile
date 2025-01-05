@@ -24,4 +24,4 @@ RUN zypper --non-interactive install which
 # https://pypi.python.org/simple/
 RUN zypper --non-interactive install ca-certificates-mozilla
 
-RUN python3 -m pip install virtualenv
+RUN python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' virtualenv

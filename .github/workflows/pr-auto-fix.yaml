@@ -8,7 +8,7 @@ jobs:
       contents: write # to create branch (peter-evans/create-pull-request)
       pull-requests: write # to create a PR (peter-evans/create-pull-request)
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       # Cache bazel build
       - name: Get current time
@@ -65,12 +65,12 @@ jobs:
         run: test "${{ steps.check.outputs.result }}" = "stay"
       # Setup to run sanity suite
       - name: Install Python Interpreter
-        uses: actions/setup-python@v4
+        uses: MatteoH2O1999/setup-python@v4
         with:
           python-version: 3.8
       - name: Install Python Packages
         run: |
-          pip install pyyaml mako virtualenv
+          pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' pyyaml mako virtualenv
           sudo apt-get update
           sudo apt-get install python3-dev
       - name: Check out repository code

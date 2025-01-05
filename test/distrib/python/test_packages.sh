@@ -37,7 +37,7 @@ TESTING_ARCHIVES=("$EXTERNAL_GIT_ROOT"/input_artifacts/grpcio-testing-[0-9]*.tar
 VIRTUAL_ENV=$(mktemp -d)
 python3 -m virtualenv "$VIRTUAL_ENV"
 PYTHON=$VIRTUAL_ENV/bin/python
-"$PYTHON" -m pip install --upgrade six pip wheel
+"$PYTHON" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade six pip wheel
 
 function validate_wheel_hashes() {
   for file in "$@"; do
@@ -48,7 +48,7 @@ function validate_wheel_hashes() {
 
 function at_least_one_installs() {
   for file in "$@"; do
-    if "$PYTHON" -m pip install "$file"; then
+    if "$PYTHON" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' "$file"; then
       return 0
     fi
   done

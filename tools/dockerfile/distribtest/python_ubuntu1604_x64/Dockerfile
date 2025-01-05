@@ -17,9 +17,9 @@ FROM ubuntu:16.04
 RUN apt-get update -y && apt-get install -y python3 python3-pip
 
 # Necessary to fix virtualenv compatibility problems with python2.7
-RUN python3 -m pip install --upgrade pip==19.3.1
+RUN python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade pip==19.3.1
 
 # Ubuntu's python-pip package installs pip to /usr/bin, whereas the upgraded
 # pip lives at /usr/local/bin/pip. We'll use the absolute path for now, since
 # this will all be replaced with python3.
-RUN /usr/local/bin/pip install virtualenv
+RUN /usr/local/bin/pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' virtualenv

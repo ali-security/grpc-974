@@ -23,7 +23,7 @@ YAML_OK=$(python3 -c "import yaml; print(yaml.__version__.split('.') >= ['5', '4
 if [[ "${YAML_OK}" != "True" ]]; then
   # PyYAML dropped 3.5 support at 5.4.1, which makes 5.3.1 the latest version we
   # can use.
-  python3 -m pip install --upgrade --ignore-installed PyYAML==5.3.1 --user
+  python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade --ignore-installed PyYAML==5.3.1 --user
 fi
 
 cd `dirname $0`/../..

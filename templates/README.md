@@ -2,8 +2,8 @@
 
 Prerequisites
 - `python`
-- `pip install mako` (the template processor)
-- `pip install pyyaml` (to read the yaml files)
+- `pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' mako` (the template processor)
+- `pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' pyyaml` (to read the yaml files)
 - `go` (required by boringssl dependency)
 
 ```

@@ -180,7 +180,7 @@ python3.7 -m venv venv
 . ./venv/bin/activate
 
 # Install requirements
-pip install -r requirements.lock
+pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' -r requirements.lock
 
 # Generate protos
 python -m grpc_tools.protoc --proto_path=../../../ \
@@ -204,7 +204,7 @@ from your dev environment. You need:
    `kubectl` subprocesses. (experimental)
 
 ### Making changes to the driver
-1. Install additional dev packages: `pip install -r requirements-dev.txt`
+1. Install additional dev packages: `pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' -r requirements-dev.txt`
 2. Use `./bin/yapf.sh` and `./bin/isort.sh` helpers to auto-format code.
 
 ### Updating Python Dependencies

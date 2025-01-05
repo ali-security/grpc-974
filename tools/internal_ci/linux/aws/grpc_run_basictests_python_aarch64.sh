@@ -18,7 +18,7 @@ set -ex
 # install pre-requisites for gRPC C core build
 sudo apt update
 sudo apt install -y build-essential autoconf libtool pkg-config cmake python python-pip clang
-sudo pip install six
+sudo pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' six
 
 # install python3.6 and pip
 sudo apt install -y python3 python3-pip

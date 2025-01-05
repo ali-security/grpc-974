@@ -16,7 +16,7 @@ FROM i386/debian:buster
 
 RUN apt-get update && apt-get install -y python3 python3-pip
 
-RUN python3 -m pip install virtualenv==16.7.9
+RUN python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' virtualenv==16.7.9
 
 RUN apt-get install -y build-essential
 RUN apt-get install -y python3-dev

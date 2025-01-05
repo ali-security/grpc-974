@@ -21,7 +21,7 @@ readonly VENV_NAME
 
 python3 -m virtualenv "${VENV_NAME}"
 
-"${VENV_NAME}"/bin/pip install -r requirements.txt
+"${VENV_NAME}"/bin/pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' -r requirements.txt
 "${VENV_NAME}"/bin/pip freeze > requirements.lock
 
 rm -rf "${VENV_NAME}"

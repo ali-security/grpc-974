@@ -26,9 +26,9 @@ RUN apt-get update && apt-get install -y \
 RUN ln -s /usr/local/go/bin/go /usr/local/bin
 
 # Install Python packages from PyPI
-RUN pip install --upgrade pip==19.3.1
-RUN pip install virtualenv
-RUN pip install futures==3.1.1 enum34==1.1.10 protobuf==3.5.2.post1 six==1.16.0 twisted==19.10.0
+RUN pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade pip==19.3.1
+RUN pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' virtualenv
+RUN pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' futures==3.1.1 enum34==1.1.10 protobuf==3.5.2.post1 six==1.16.0 twisted==19.10.0
 
 # Define the default command.
 CMD ["bash"]

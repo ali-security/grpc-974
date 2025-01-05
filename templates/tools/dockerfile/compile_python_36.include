@@ -17,4 +17,4 @@ RUN cd /tmp && ${'\\'}
     md5sum -c checksum.md5
 
 RUN python3.6 -m ensurepip && ${'\\'}
-    python3.6 -m pip install coverage
+    python3.6 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' coverage

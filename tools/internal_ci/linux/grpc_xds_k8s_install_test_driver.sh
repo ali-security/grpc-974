@@ -245,7 +245,7 @@ test_driver_pip_install() {
     source "${venv_dir}/bin/activate"
   fi
 
-  python3 -m pip install -r requirements.lock
+  python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' -r requirements.lock
   echo "Installed Python packages:"
   python3 -m pip list
 }
@@ -368,7 +368,7 @@ kokoro_setup_python_virtual_environment() {
   # pip is fixed to 21.0.1 due to issue https://github.com/pypa/pip/pull/9835
   # internal details: b/186411224
   # TODO(sergiitk): revert https://github.com/grpc/grpc/pull/26087 when 21.1.1 released
-  python3 -m pip install -U pip==21.0.1
+  python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' -U pip==21.0.1
   python3 -m pip --version
 }
 

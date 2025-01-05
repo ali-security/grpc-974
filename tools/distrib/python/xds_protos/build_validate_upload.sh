@@ -29,7 +29,7 @@ python3 setup.py bdist_wheel
 # imports with relative imports
 pushd $(mktemp -d '/tmp/test_xds_protos.XXXXXX')
 python3 -m virtualenv env
-env/bin/python -m pip install ${WORK_DIR}/dist/*.whl
+env/bin/python -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' ${WORK_DIR}/dist/*.whl
 cp ${WORK_DIR}/generated_file_import_test.py generated_file_import_test.py
 env/bin/python generated_file_import_test.py
 popd

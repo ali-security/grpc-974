@@ -23,9 +23,9 @@ set -ex
 HOME="$(mktemp -d)"
 export HOME
 
-pip install -r requirements.bazel.txt
+pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' -r requirements.bazel.txt
 tools/run_tests/run_tests.py -c opt -l python --compiler python3.8 --newline_on_success -j 8 --build_only
 # shellcheck disable=SC1091
 source py38/bin/activate
-pip install --upgrade Sphinx
+pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade Sphinx
 python setup.py doc

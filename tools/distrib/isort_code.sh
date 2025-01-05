@@ -38,7 +38,7 @@ VIRTUALENV=isort_virtual_environment
 
 python3 -m virtualenv $VIRTUALENV
 PYTHON=${VIRTUALENV}/bin/python
-"$PYTHON" -m pip install isort==5.9.2
+"$PYTHON" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' isort==5.9.2
 
 $PYTHON -m isort $ACTION \
   --force-sort-within-sections \

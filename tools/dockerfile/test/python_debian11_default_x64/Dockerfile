@@ -76,7 +76,7 @@ RUN cd /tmp && \
     md5sum -c checksum.md5
 
 RUN python3.6 -m ensurepip && \
-    python3.6 -m pip install coverage
+    python3.6 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' coverage
 
 #=================
 # Compile CPython 3.7.13 from source
@@ -97,7 +97,7 @@ RUN cd /tmp && \
     md5sum -c checksum.md5
 
 RUN python3.7 -m ensurepip && \
-    python3.7 -m pip install coverage
+    python3.7 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' coverage
 
 #=================
 # Compile CPython 3.8.13 from source
@@ -118,7 +118,7 @@ RUN cd /tmp && \
     md5sum -c checksum.md5
 
 RUN python3.8 -m ensurepip && \
-    python3.8 -m pip install coverage
+    python3.8 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' coverage
 
 #=================
 # Compile CPython 3.10.3 from source
@@ -139,18 +139,18 @@ RUN cd /tmp && \
     md5sum -c checksum.md5
 
 RUN python3.10 -m ensurepip && \
-    python3.10 -m pip install coverage
+    python3.10 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' coverage
 
 
 # 3.9 is the default python3 version on debian11
 RUN apt-get update && apt-get install -y python3.9 python3.9-dev python3-pip
 
 # for Python test coverage reporting
-RUN python3.9 -m pip install coverage
+RUN python3.9 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' coverage
 
 # Google Cloud Platform API libraries
 # These are needed for uploading test results to BigQuery (e.g. by tools/run_tests scripts)
-RUN python3 -m pip install --upgrade google-auth==1.23.0 google-api-python-client==1.12.8 oauth2client==4.1.0
+RUN python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade google-auth==1.23.0 google-api-python-client==1.12.8 oauth2client==4.1.0
 
 
 #=================

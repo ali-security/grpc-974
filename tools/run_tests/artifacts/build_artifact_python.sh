@@ -26,7 +26,7 @@ export AUDITWHEEL=${AUDITWHEEL:-auditwheel}
 source tools/internal_ci/helper_scripts/prepare_ccache_symlinks_rc
 
 # Needed for building binary distribution wheels -- bdist_wheel
-"${PYTHON}" -m pip install --upgrade wheel
+"${PYTHON}" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade wheel
 
 if [ "$GRPC_SKIP_PIP_CYTHON_UPGRADE" == "" ]
 then
@@ -37,7 +37,7 @@ then
   # Any installation step is a potential source of breakages,
   # so we are trying to perform as few download-and-install operations
   # as possible.
-  "${PYTHON}" -m pip install --upgrade cython
+  "${PYTHON}" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade cython
 fi
 
 # Allow build_ext to build C/C++ files in parallel
@@ -137,10 +137,10 @@ if [ "$GRPC_SKIP_TWINE_CHECK" == "" ]
 then
   # Install virtualenv if it isn't already available.
   # TODO(jtattermusch): cleanup the virtualenv version fallback logic.
-  "${PYTHON}" -m pip install virtualenv
-  "${PYTHON}" -m virtualenv venv || { "${PYTHON}" -m pip install virtualenv==20.0.23 && "${PYTHON}" -m virtualenv venv; }
+  "${PYTHON}" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' virtualenv
+  "${PYTHON}" -m virtualenv venv || { "${PYTHON}" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' virtualenv==20.0.23 && "${PYTHON}" -m virtualenv venv; }
   # Ensure the generated artifacts are valid using "twine check"
-  venv/bin/python -m pip install "twine<=2.0"
+  venv/bin/python -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' "twine<=2.0"
   venv/bin/python -m twine check dist/* tools/distrib/python/grpcio_tools/dist/*
   rm -rf venv/
 fi
@@ -204,15 +204,15 @@ cp -r tools/distrib/python/grpcio_tools/dist/*.tar.gz "$ARTIFACT_DIR"
 # are in a docker image or in a virtualenv.
 if [ "$GRPC_BUILD_GRPCIO_TOOLS_DEPENDENTS" != "" ]
 then
-  "${PYTHON}" -m pip install -rrequirements.txt
+  "${PYTHON}" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' -rrequirements.txt
 
   if [ "$("$PYTHON" -c "import sys; print(sys.version_info[0])")" == "2" ]
   then
-    "${PYTHON}" -m pip install futures>=2.2.0 enum34>=1.0.4
+    "${PYTHON}" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' futures>=2.2.0 enum34>=1.0.4
   fi
 
-  "${PYTHON}" -m pip install grpcio --no-index --find-links "file://$ARTIFACT_DIR/"
-  "${PYTHON}" -m pip install grpcio-tools --no-index --find-links "file://$ARTIFACT_DIR/"
+  "${PYTHON}" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' grpcio --no-index --find-links "file://$ARTIFACT_DIR/"
+  "${PYTHON}" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' grpcio-tools --no-index --find-links "file://$ARTIFACT_DIR/"
 
   # Note(lidiz) setuptools's "sdist" command creates a source tarball, which
   # demands an extra step of building the wheel. The building step is merely ran
@@ -251,9 +251,9 @@ then
 
   # Build grpcio_admin source distribution and it needs the cutting-edge version
   # of Channelz and CSDS to be installed.
-  "${PYTHON}" -m pip install --upgrade xds-protos==0.0.8
-  "${PYTHON}" -m pip install grpcio-channelz --no-index --find-links "file://$ARTIFACT_DIR/"
-  "${PYTHON}" -m pip install grpcio-csds --no-index --find-links "file://$ARTIFACT_DIR/"
+  "${PYTHON}" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade xds-protos==0.0.8
+  "${PYTHON}" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' grpcio-channelz --no-index --find-links "file://$ARTIFACT_DIR/"
+  "${PYTHON}" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' grpcio-csds --no-index --find-links "file://$ARTIFACT_DIR/"
   ${SETARCH_CMD} "${PYTHON}" src/python/grpcio_admin/setup.py \
       sdist bdist_wheel
   cp -r src/python/grpcio_admin/dist/* "$ARTIFACT_DIR"

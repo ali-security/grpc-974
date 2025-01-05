@@ -44,4 +44,4 @@ popd
 rm -rf "Python-${PYTHON_VERSION}"
 
 # install cython and wheel
-"${PYTHON_PREFIX}/bin/python3" -m pip install --upgrade cython wheel
+"${PYTHON_PREFIX}/bin/python3" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade cython wheel

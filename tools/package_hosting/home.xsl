@@ -50,7 +50,7 @@
     <li><a href="https://github.com/grpc/grpc-node">Node</a>: <code>npm install @grpc/grpc-js</code></li>
     <li><a href="https://github.com/grpc/grpc/blob/master/src/objective-c">Objective-C</a>: Add <code>gRPC-ProtoRPC</code> dependency to podspec</li>
     <li><a href="https://github.com/grpc/grpc/blob/master/src/php">PHP</a>: <code>pecl install grpc</code></li>
-    <li><a href="https://github.com/grpc/grpc/blob/master/src/python/grpcio">Python</a>: <code>pip install grpcio</code></li>
+    <li><a href="https://github.com/grpc/grpc/blob/master/src/python/grpcio">Python</a>: <code>pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' grpcio</code></li>
     <li><a href="https://github.com/grpc/grpc/blob/master/src/ruby">Ruby</a>: <code>gem install grpc</code></li>
     <li><a href="https://github.com/grpc/grpc-web">WebJS</a>: follow the <a href="https://github.com/grpc/grpc-web">instructions in <code>grpc-web</code> repository</a></li>
   </ul>

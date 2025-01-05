@@ -18,5 +18,5 @@ RUN pacman --noconfirm -Syy
 RUN pacman --noconfirm -S openssl
 RUN pacman --noconfirm -S python
 RUN pacman --noconfirm -S python-pip
-RUN python3 -m pip install virtualenv
+RUN python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' virtualenv
 RUN pacman --noconfirm -S base-devel

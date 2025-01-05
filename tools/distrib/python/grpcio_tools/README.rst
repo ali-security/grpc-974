@@ -19,13 +19,13 @@ If you are installing locally...
 
 ::
 
-  $ pip install grpcio-tools
+  $ pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' grpcio-tools
 
 Else system wide (on Ubuntu)...
 
 ::
 
-  $ sudo pip install grpcio-tools
+  $ sudo pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' grpcio-tools
 
 If you're on Windows make sure that you installed the :code:`pip.exe` component
 when you installed Python (if not go back and install it!) then invoke:
@@ -63,8 +63,8 @@ GCC-like stuff, but you may end up having a bad time.
   $ cd tools/distrib/python/grpcio_tools
   $ python ../make_grpcio_tools.py
 
-  # For the next command do `sudo pip install` if you get permission-denied errors
-  $ GRPC_PYTHON_BUILD_WITH_CYTHON=1 pip install .
+  # For the next command do `sudo pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/'` if you get permission-denied errors
+  $ GRPC_PYTHON_BUILD_WITH_CYTHON=1 pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' .
 
 You cannot currently install Python from source on Windows. Things might work
 out for you in MSYS2 (follow the Linux instructions), but it isn't officially
@@ -82,7 +82,7 @@ Help, I ...
   which in turn is likely because your operating system's package manager owns
   it. You'll need to force the installation of the dependency:
 
-  :code:`pip install --ignore-installed $OFFENDING_DEPENDENCY`
+  :code:`pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --ignore-installed $OFFENDING_DEPENDENCY`
 
   For example, if you get an error like the following:
 
@@ -99,7 +99,7 @@ Help, I ...
 
   ::
 
-    sudo pip install --ignore-installed six
+    sudo pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --ignore-installed six
 
 * **... see compiler errors on some platforms when either installing from source or from the source distribution**
 

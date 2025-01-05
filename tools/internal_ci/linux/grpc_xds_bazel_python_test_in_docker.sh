@@ -23,14 +23,14 @@ git clone /var/local/jenkins/grpc /var/local/git/grpc
 ${name}')
 cd /var/local/git/grpc
 
-python3 -m pip install virtualenv
+python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' virtualenv
 VIRTUAL_ENV=$(mktemp -d)
 python3 -m virtualenv "$VIRTUAL_ENV" -p python3
 PYTHON="$VIRTUAL_ENV"/bin/python
-"$PYTHON" -m pip install --upgrade pip==19.3.1
+"$PYTHON" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade pip==19.3.1
 # TODO(sergiitk): Unpin grpcio-tools when a version of xds-protos
 #   compatible with protobuf 4.X is uploaded to PyPi.
-"$PYTHON" -m pip install --upgrade grpcio-tools==1.48.1 google-api-python-client google-auth-httplib2 oauth2client xds-protos
+"$PYTHON" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade grpcio-tools==1.48.1 google-api-python-client google-auth-httplib2 oauth2client xds-protos
 
 # Prepare generated Python code.
 TOOLS_DIR=tools/run_tests

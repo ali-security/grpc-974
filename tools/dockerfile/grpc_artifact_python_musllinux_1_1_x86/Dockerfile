@@ -16,12 +16,12 @@ FROM quay.io/pypa/musllinux_1_1_i686:2022-08-29-0fd77fa
 
 ###################################
 # Install Python build requirements
-RUN /opt/python/cp36-cp36m/bin/pip install --upgrade cython
-RUN /opt/python/cp37-cp37m/bin/pip install --upgrade cython
-RUN /opt/python/cp38-cp38/bin/pip install --upgrade cython
-RUN /opt/python/cp39-cp39/bin/pip install --upgrade cython
-RUN /opt/python/cp310-cp310/bin/pip install --upgrade cython
-RUN /opt/python/cp311-cp311/bin/pip install --upgrade cython
+RUN /opt/python/cp36-cp36m/bin/pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade cython
+RUN /opt/python/cp37-cp37m/bin/pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade cython
+RUN /opt/python/cp38-cp38/bin/pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade cython
+RUN /opt/python/cp39-cp39/bin/pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade cython
+RUN /opt/python/cp310-cp310/bin/pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade cython
+RUN /opt/python/cp311-cp311/bin/pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade cython
 
 #=================
 # Install ccache

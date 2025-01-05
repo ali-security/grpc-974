@@ -33,6 +33,6 @@ VIRTUALENV=yapf_virtual_environment
 
 python3 -m virtualenv $VIRTUALENV -p $(which python3)
 PYTHON=${VIRTUALENV}/bin/python
-"$PYTHON" -m pip install yapf==0.30.0
+"$PYTHON" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' yapf==0.30.0
 
 $PYTHON -m yapf $ACTION --parallel --recursive --style=setup.cfg "${DIRS[@]}" -e "**/site-packages/**/*"

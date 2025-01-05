@@ -77,10 +77,10 @@ sudo apt-get install -y google-cloud-sdk
 sudo apt-get install -y libgtest-dev libc++-dev clang
 
 # Python dependencies
-sudo pip install --upgrade pip==19.3.1
-sudo pip install tabulate
-sudo pip install google-api-python-client oauth2client
-sudo pip install virtualenv
+sudo pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade pip==19.3.1
+sudo pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' tabulate
+sudo pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' google-api-python-client oauth2client
+sudo pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' virtualenv
 
 # pypy is used instead of python for postprocessing benchmark outputs
 # because some reports are huge and pypy is much faster.
@@ -89,12 +89,12 @@ sudo pip install virtualenv
 sudo apt-get install -y pypy pypy-dev
 curl -O https://bootstrap.pypa.io/get-pip.py
 sudo pypy get-pip.py
-sudo pypy -m pip install tabulate
-sudo pypy -m pip install google-api-python-client oauth2client
+sudo pypy -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' tabulate
+sudo pypy -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' google-api-python-client oauth2client
 # TODO(jtattermusch): for some reason, we need psutil installed
 # in pypy for kokoro_log_reader.py (strange, because the command is
 # "python kokoro_log_reader.py" and pypy is not the system default)
-sudo pypy -m pip install psutil
+sudo pypy -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' psutil
 
 # Node dependencies (nvm has to be installed under user kbuilder)
 touch .profile

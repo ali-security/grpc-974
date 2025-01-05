@@ -12,10 +12,10 @@ RUN apt-get update && apt-get install -y ${'\\'}
   && apt-get clean
 
 # use pinned version of pip to avoid sudden breakages
-RUN python3 -m pip install --upgrade pip==19.3.1
+RUN python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade pip==19.3.1
 
 # TODO(jtattermusch): currently six is needed for tools/run_tests scripts
 # but since our python2 usage is deprecated, we should get rid of it.
-RUN python3 -m pip install six==1.16.0
+RUN python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' six==1.16.0
 
 <%include file="./gcp_api_libraries.include"/>

@@ -55,7 +55,7 @@ diff --git a/tools/dockerfile/interoptest/grpc_interop_csharpcoreclr/Dockerfile 
 index 65f67d3650..26223753ed 100644
 --- a/tools/dockerfile/interoptest/grpc_interop_csharpcoreclr/Dockerfile
 +++ b/tools/dockerfile/interoptest/grpc_interop_csharpcoreclr/Dockerfile
-@@ -82,11 +82,10 @@ RUN pip install futures==2.2.0 enum34==1.0.4 protobuf==3.0.0a2
+@@ -82,11 +82,10 @@ RUN pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' futures==2.2.0 enum34==1.0.4 protobuf==3.0.0a2
  # C# dependencies
  
  # Update to a newer version of mono

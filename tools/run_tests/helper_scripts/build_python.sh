@@ -123,7 +123,7 @@ if [[ "$(inside_venv)" ]]; then
   VENV_PYTHON="$PYTHON"
 else
   # Instantiate the virtualenv from the Python version passed in.
-  $PYTHON -m pip install --user virtualenv==20.0.23
+  $PYTHON -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --user virtualenv==20.0.23
   $PYTHON -m virtualenv "$VENV"
   VENV_PYTHON="$(pwd)/$VENV/$VENV_RELATIVE_PYTHON"
 fi
@@ -135,7 +135,7 @@ fi
 # third-party build process. This function pipes through only the
 # minimal environment necessary.
 pip_install() {
-  /usr/bin/env -i PATH="$PATH" "$VENV_PYTHON" -m pip install "$@"
+  /usr/bin/env -i PATH="$PATH" "$VENV_PYTHON" -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' "$@"
 }
 
 # Pin setuptools to < 60.0.0 to restore the distutil installation, see:
@@ -150,7 +150,7 @@ pip_install_dir() {
   PWD=$(pwd)
   cd "$1"
   ($VENV_PYTHON setup.py build_ext -c "$TOOLCHAIN" || true)
-  $VENV_PYTHON -m pip install --no-deps .
+  $VENV_PYTHON -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --no-deps .
   cd "$PWD"
 }
 
@@ -158,7 +158,7 @@ pip_install_dir_and_deps() {
   PWD=$(pwd)
   cd "$1"
   ($VENV_PYTHON setup.py build_ext -c "$TOOLCHAIN" || true)
-  $VENV_PYTHON -m pip install .
+  $VENV_PYTHON -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' .
   cd "$PWD"
 }
 

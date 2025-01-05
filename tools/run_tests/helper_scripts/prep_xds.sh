@@ -20,9 +20,9 @@ set -ex
 cd "$(dirname "$0")/../../.."
 
 sudo apt-get install -y python3-pip
-sudo python3 -m pip install --upgrade pip
-sudo python3 -m pip install --upgrade setuptools
-sudo python3 -m pip install --upgrade grpcio==1.31.0 grpcio-tools==1.31.0 protobuf google-api-python-client google-auth-httplib2 oauth2client xds-protos
+sudo python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade pip
+sudo python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade setuptools
+sudo python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade grpcio==1.31.0 grpcio-tools==1.31.0 protobuf google-api-python-client google-auth-httplib2 oauth2client xds-protos
 
 # Prepare generated Python code.
 TOOLS_DIR=tools/run_tests

@@ -79,7 +79,7 @@ var pythonRepoLink = document.createElement("a");
 pythonRepoLink.href = './python';
 var pythonRepo = pythonRepoLink.href;
 document.write("<p><code>" +
-"$ pip install --pre --upgrade --force-reinstall --extra-index-url \\<br />" +
+"$ pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --pre --upgrade --force-reinstall --extra-index-url \\<br />" +
 "&nbsp;&nbsp;&nbsp;&nbsp;<a href='" +  pythonRepo + "'>" + pythonRepo + "</a> \\<br />" +
 "&nbsp;&nbsp;&nbsp;&nbsp;grpcio grpcio-{tools,health-checking,reflection,testing}</code></p>");
 // ]]>

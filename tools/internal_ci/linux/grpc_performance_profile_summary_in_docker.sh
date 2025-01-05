@@ -20,7 +20,7 @@ cd $(dirname $0)/../../..
 
 # some extra pip packages are needed for the check_on_pr.py script to work
 # TODO(jtattermusch): avoid needing to install these pip packages each time
-time python3 -m pip install --user -r tools/internal_ci/helper_scripts/requirements.linux_perf.txt
+time python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --user -r tools/internal_ci/helper_scripts/requirements.linux_perf.txt
 
 CPUS=`python3 -c 'import multiprocessing; print(multiprocessing.cpu_count())'`
 

@@ -23,7 +23,7 @@
   RUN apt-get update && apt-get install -y python3.9 python3.9-dev python3-pip
   
   # for Python test coverage reporting
-  RUN python3.9 -m pip install coverage
+  RUN python3.9 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' coverage
 
   <%include file="../../gcp_api_libraries.include"/>
 

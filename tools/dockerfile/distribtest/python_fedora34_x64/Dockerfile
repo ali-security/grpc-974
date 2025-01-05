@@ -15,6 +15,6 @@
 FROM fedora:34
 
 RUN yum clean all && yum update -y && yum install -y python3 python3-pip
-RUN python3 -m pip install virtualenv
+RUN python3 -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' virtualenv
 
 RUN yum install -y findutils

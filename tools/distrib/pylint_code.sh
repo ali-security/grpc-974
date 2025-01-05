@@ -43,10 +43,10 @@ python3 -m virtualenv $VIRTUALENV -p $(which python3)
 
 PYTHON=$VIRTUALENV/bin/python
 
-$PYTHON -m pip install --upgrade pip==19.3.1
+$PYTHON -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade pip==19.3.1
 
 # TODO(https://github.com/grpc/grpc/issues/23394): Update Pylint.
-$PYTHON -m pip install --upgrade astroid==2.3.3 pylint==2.2.2 "isort>=4.3.0,<5.0.0"
+$PYTHON -m pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' --upgrade astroid==2.3.3 pylint==2.2.2 "isort>=4.3.0,<5.0.0"
 
 EXIT=0
 for dir in "${DIRS[@]}"; do

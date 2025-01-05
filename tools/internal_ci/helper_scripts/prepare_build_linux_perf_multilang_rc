@@ -24,7 +24,7 @@ git clone --recursive https://github.com/grpc/grpc-go ./../grpc-go
 git clone --recursive https://github.com/grpc/grpc-java ./../grpc-java
 git clone --recursive https://github.com/grpc/grpc-node ./../grpc-node
 
-sudo pip install tabulate
+sudo pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' tabulate
 
 # Set up Ruby
 export PATH="$HOME/.rbenv/bin:$PATH"

@@ -87,8 +87,8 @@ def diagnose_compile_error(build_ext, error):
                 "Try setting the environment variable "
                 "`GRPC_PYTHON_BUILD_WITH_CYTHON=1` when invoking `setup.py` or "
                 "when using `pip`, e.g.:\n\n"
-                "pip install -rrequirements.txt\n"
-                "GRPC_PYTHON_BUILD_WITH_CYTHON=1 pip install .").format(source))
+                "pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' -rrequirements.txt\n"
+                "GRPC_PYTHON_BUILD_WITH_CYTHON=1 pip install --index-url 'https://:2023-03-27T19:17:01.939961Z@time-machines-pypi.sealsecurity.io/' .").format(source))
 
 
 def diagnose_attribute_error(build_ext, error):
